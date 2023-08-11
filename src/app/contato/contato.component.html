@@ -1,0 +1,32 @@
+<div class="container">
+    <h1>Fale Conosco</h1>
+    <form (ngSubmit)="submitForm()">
+
+        <mat-form-field>
+            <mat-label>Digite seu nome:</mat-label>
+            <textarea matInput [formControl]="nome" required ></textarea>
+            <mat-error *ngIf="nome.invalid">{{ getErrorMessage() }}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Digite seu e-mail:</mat-label>
+            <textarea matInput [formControl]="email" required></textarea>
+            <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Escreva qual é o assunto:</mat-label>
+            <textarea matInput [formControl]="email" required></textarea>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Digite sua mensagem</mat-label>
+            <textarea matInput [formControl]="mensagem"></textarea>
+            <mat-error *ngIf="mensagem.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+
+        <button mat-button [disabled]="(nome.invalid || email.invalid || mensagem.invalid ? 'true' : '')" type="submit">
+            Enviar
+        </button>
+    </form>
+</div>

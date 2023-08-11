@@ -1,0 +1,62 @@
+<div id="tela">
+    <div class="container">
+        <h1> Olá, {{ nome }} {{ sobrenome }}!</h1>
+        <section id="imoveis-favoritos">
+            <h2>Confira aqui os seus livros favoritos:</h2>
+            <mat-grid-list cols="5" rowHeight="3:8">
+                <div class="item" *ngFor="let livro of livros; let i = index">
+                    <mat-grid-tile *ngIf="livro.favorito">
+                        <mat-card class="mat-card">
+                            <img mat-card-image [src]="livro.foto" [alt]="livro.titulo" />
+                            <mat-card-content>
+                                <h3>{{ livro.titulo }}</h3>
+                                <ul>
+                                    <li>Autor: {{ livro.autor }}</li>
+                                    <li>Páginas: {{ livro.paginas }}</li>
+                                    <li>Estante: {{ livro.assunto }} </li>
+                                    <li>Preço: {{ livro.preco | currency }}</li>
+                                </ul>
+                            </mat-card-content>
+                            <mat-card-actions>
+                                <button [class]="livro.favorito === false ? 'favorite' : 'favorite-checked'"
+                                    [title]="livro.favorito === false ? 'Adicionar aos favoritos' : 'Remover dos favoritos'"
+                                    mat-button (click)="toogleFavorito(i)">
+                                    <mat-icon aria-hidden="false" aria-label="Favoritos" fontIcon="favorite"></mat-icon>
+                                </button>
+                                <button mat-button (click)="verDetalhes(livro.id)">Mais detalhes</button>
+                            </mat-card-actions>
+
+                        </mat-card>
+                    </mat-grid-tile>
+                </div>
+            </mat-grid-list>
+        </section>
+        <section id="lista-imoveis">
+            <h2>Todos os imoveis:</h2>
+            <mat-grid-list cols="5" rowHeight="3:8">
+                <mat-grid-tile *ngFor="let livro of livros; let i = index">
+                    <mat-card>
+                        <img mat-card-image [src]="livro.foto" [alt]="livro.titulo" />
+                        <mat-card-content>
+                            <h3>{{ livro.titulo }}</h3>
+                            <ul>
+                                <li>Autor: {{ livro.autor }}</li>
+                                <li>Páginas: {{ livro.paginas }}</li>
+                                <li>Estante: {{ livro.assunto }} </li>
+                                <li>Preço: {{ livro.preco | currency }}</li>
+                            </ul>
+                        </mat-card-content>
+                        <mat-card-actions>
+                            <button [class]="livro.favorito === false ? 'favorite' : 'favorite-checked'"
+                                [title]="livro.favorito === false ? 'Adicionar aos favoritos' : 'Remover dos favoritos'"
+                                mat-button (click)="toogleFavorito(i)">
+                                <mat-icon aria-hidden="false" aria-label="Favoritos" fontIcon="favorite"></mat-icon>
+                            </button>
+                            <button mat-button (click)="verDetalhes(livro.id)">Mais detalhes</button>
+                        </mat-card-actions>
+                    </mat-card>
+                </mat-grid-tile>
+            </mat-grid-list>
+        </section>
+    </div>
+</div>
