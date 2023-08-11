@@ -21,7 +21,7 @@
                                 <button [class]="livro.favorito === false ? 'favorite' : 'favorite-checked'"
                                     [title]="livro.favorito === false ? 'Adicionar aos favoritos' : 'Remover dos favoritos'"
                                     mat-button (click)="toogleFavorito(i)">
-                                    <mat-icon aria-hidden="false" aria-label="Favoritos" fontIcon="favorite"></mat-icon>
+                                    <mat-icon aria-hidden="false" aria-label="star" fontIcon="star"></mat-icon>
                                 </button>
                                 <button mat-button (click)="verDetalhes(livro.id)">Mais detalhes</button>
                             </mat-card-actions>

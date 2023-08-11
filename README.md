@@ -1,27 +1,35 @@
 # CastleOfBooks
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.5.
+## Projeto de um e-commerce desenvolvido em Angular.
 
-## Development server
+## Tecnologias Aplicadas:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Angular
+- SCSS
+- Material UI
 
-## Code scaffolding
+## Instalação
+Angular precisa do [Node.js](https://nodejs.org/) v16+ para funcionar.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Clonar o repositório e entrar na pasta do projeto
+```sh
+git clone https://github.com/frizzoana/CastleOfBooks.git
+cd CastleOfBooks
+```
 
-## Build
+Instalar o Angular de maneira global em sua máquina:
+```sh
+npm install -g @angular/cli
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Instalar as demais dependencias
+```sh
+npm install
+```
 
-## Running unit tests
+Rodar o servidor
+```sh
+ng serve
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Prontinho! O seu projeto estará rodando no endereço http://localhost:4200
